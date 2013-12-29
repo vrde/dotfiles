@@ -1,0 +1,18 @@
+[user]
+	name = vrde
+
+[color]
+	ui = auto
+
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lt = log --graph --oneline --decorate --all
+    watchtree = !~/.git_ext/watch-tree.sh
+    wdiff = diff --word-diff=plain
+	s = status
+	ci = commit
+	c = checkout
+
+[push]
+	default = simple
