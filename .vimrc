@@ -10,11 +10,11 @@ set nocompatible
 
     " Import all the bundles {
         Bundle 'gmarik/vundle'
-        Bundle 'unite.vim'
         Bundle 'vim-multiple-cursors'
         Bundle 'pyflakes.vim'
         Bundle 'jellybeans.vim'
         Bundle 'The-NERD-tree'
+        Bundle 'ctrlp.vim'
     " }
 
 
@@ -43,6 +43,8 @@ set nocompatible
 " Reload a file if it has been changed quite useful when switching between
 " branches with Git.
 set autoread
+set wildignore=*.o,*.obj,*.pyc
+set noswapfile
 
 " Please the eyes {
     colorscheme jellybeans
@@ -67,7 +69,6 @@ set autoread
     nnoremap <C-h> gT
 
     let mapleader = ","
-
 " }
 
 " Some useful func {
@@ -94,25 +95,6 @@ set autoread
 
 
 " Plugin specific {
-
-    " unite.vim {
-        set runtimepath+=~/.vim/vimproc/
-
-        if executable('ag')
-            let g:unite_source_grep_command='ag'
-            let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
-            let g:unite_source_grep_recursive_opt=''
-        endif
-
-        let g:unite_data_directory='~/.vim/.cache/unite'
-        " let g:unite_enable_start_insert=1
-        let g:unite_source_history_yank_enable=1
-        let g:unite_source_rec_max_cache_files=5000
-        let g:unite_prompt='» '
-
-        nnoremap <C-p> :Unite -toggle -auto-resize -start-insert -buffer-name=mixed file_mru file_rec buffer bookmark history/yank<CR>
-        nnoremap <C-f> :Unite -no-quit -auto-resize -buffer-name=search grep:.<CR>
-    " }
 
     " The-NERD-Tree {
         nnoremap <f2> :NERDTreeToggle<cr>

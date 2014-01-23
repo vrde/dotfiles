@@ -2,7 +2,7 @@
 source ~/.zsh/zshrc.sh
 PROMPT='%B%m%~%b$(git_super_status) %# '
 
-if [[ $TERM = *258color* || $TERM = *rxvt* ]]; then
+if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     turquoise="%F{81}"
     orange="%F{166}"
     purple="%F{135}"
