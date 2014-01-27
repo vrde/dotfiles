@@ -15,6 +15,7 @@ set nocompatible
         Bundle 'jellybeans.vim'
         Bundle 'The-NERD-tree'
         Bundle 'ctrlp.vim'
+        Bundle 'nginx'
     " }
 
 
@@ -90,7 +91,7 @@ set noswapfile
 " }
 
 " Autocommands {
-    autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 " }
 
 
