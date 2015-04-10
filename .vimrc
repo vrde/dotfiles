@@ -16,6 +16,17 @@ set nocompatible
         Bundle 'The-NERD-tree'
         Bundle 'ctrlp.vim'
         Bundle 'nginx'
+        Plugin 'rainbow_parentheses.vim'
+        Plugin 'Tabular'
+        Plugin 'junegunn/goyo.vim'
+        Plugin 'junegunn/limelight.vim'
+        Plugin 'wavded/vim-stylus'
+        Plugin 'vim-javascript'
+        Plugin 'mxw/vim-jsx'
+        Plugin 'SuperTab'
+        Plugin 'xmledit'
+        Plugin 'surround.vim'
+        Plugin 'rking/ag.vim'
     " }
 
 
@@ -40,12 +51,14 @@ set nocompatible
     endif
 " }
 
+let g:html_indent_inctags = "html,body,head,tbody,p"
 
 " Reload a file if it has been changed quite useful when switching between
 " branches with Git.
 set autoread
 set wildignore=*.o,*.obj,*.pyc
 set noswapfile
+set autochdir
 
 " Please the eyes {
     colorscheme jellybeans
@@ -61,6 +74,7 @@ set noswapfile
 
     set number
 " }
+"
 
 " Remaps {
     " go to the next tab
@@ -70,6 +84,10 @@ set noswapfile
     nnoremap <C-h> gT
 
     let mapleader = ","
+" }
+
+" ctags {
+    set tags=./tags;$HOME
 " }
 
 " Some useful func {
@@ -102,4 +120,31 @@ set noswapfile
         let NERDTreeIgnore=['\.pyc$', '\~$']
     " }
 
+    " rainbow_parenthesis {
+        au VimEnter * RainbowParenthesesToggle
+        au Syntax * RainbowParenthesesLoadRound
+        au Syntax * RainbowParenthesesLoadSquare
+        au Syntax * RainbowParenthesesLoadBraces
+    " }
+
+    " Limelight {
+        let g:limelight_conceal_ctermfg = 'gray'
+        let g:limelight_conceal_ctermfg = 240
+    " }
+
+    " JSX {
+        let g:jsx_ext_required = 0
+    " }
+
+    " Goyo {
+        let g:goyo_width = 120
+    " }
 " }
+
+" Extensions {
+
+    " Columnize {
+        vnoremap <f3> :!column -t<cr>
+    " }
+" }
+
