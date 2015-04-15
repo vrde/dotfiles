@@ -5,7 +5,7 @@ set nocompatible
 " Start Vundle {
 
     filetype off
-    set runtimepath+=~/.vim/bundle/vundle/
+    set runtimepath+=~/.vim/bundle/Vundle.vim/
     call vundle#rc()
 
     " Import all the bundles {
@@ -111,6 +111,9 @@ set autochdir
 " Autocommands {
     au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 " }
+
+
+set t_Co=256
 
 
 " Plugin specific {
