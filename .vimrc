@@ -15,7 +15,6 @@ set nocompatible
         Bundle 'jellybeans.vim'
         Bundle 'The-NERD-tree'
         Bundle 'ctrlp.vim'
-        Bundle 'nginx'
         Plugin 'rainbow_parentheses.vim'
         Plugin 'Tabular'
         Plugin 'junegunn/goyo.vim'
@@ -27,6 +26,9 @@ set nocompatible
         Plugin 'xmledit'
         Plugin 'surround.vim'
         Plugin 'rking/ag.vim'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'ntpeters/vim-better-whitespace'
+        " Plugin 'davidhalter/jedi-vim'
     " }
 
 
@@ -56,9 +58,10 @@ let g:html_indent_inctags = "html,body,head,tbody,p"
 " Reload a file if it has been changed quite useful when switching between
 " branches with Git.
 set autoread
-set wildignore=*.o,*.obj,*.pyc
+set wildignore=*.o,*.obj,*.pyc,*/node_modules/*
 set noswapfile
 set autochdir
+set colorcolumn=119
 
 " Please the eyes {
     colorscheme jellybeans
@@ -108,11 +111,6 @@ set autochdir
     endfunction
 " }
 
-" Autocommands {
-    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
-" }
-
-
 " Plugin specific {
 
     " The-NERD-Tree {
@@ -139,6 +137,16 @@ set autochdir
     " Goyo {
         let g:goyo_width = 120
     " }
+
+    " Syntastic {
+        let g:syntastic_javascript_checkers = ['eslint']
+        let g:syntastic_check_on_open=1
+        let g:syntastic_enable_signs=1
+    " }
+
+    " Syntastic {
+      let g:jedi#use_splits_not_buffers = 'bottom'
+    " }
 " }
 
 " Extensions {
@@ -146,5 +154,5 @@ set autochdir
     " Columnize {
         vnoremap <f3> :!column -t<cr>
     " }
-" }
+" } 
 
